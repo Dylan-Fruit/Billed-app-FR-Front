@@ -104,6 +104,7 @@ export default class {
       $(`#open-bill${bill.id}`).css({ background: "#2A2B35" });
       $(".dashboard-right-container div").html(DashboardFormUI(bill));
       $(".vertical-navbar").css({ height: "150vh" });
+      this.counter++;
     } else {
       $(`#open-bill${bill.id}`).css({ background: "#0D5AE5" });
 
@@ -154,8 +155,7 @@ export default class {
     }
 
     bills.forEach((bill) => {
-      $(`#openbill${bill.id}`).off();
-
+      $(`#open-bill${bill.id}`).off();
       $(`#open-bill${bill.id}`).click((e) =>
         this.handleEditTicket(e, bill, bills)
       );
